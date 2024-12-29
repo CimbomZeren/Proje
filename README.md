@@ -1,44 +1,24 @@
-# Proje
+public abstract class Kart {
+    
+    protected String name;
+    protected String [][] anlamlar;
+    
+    public Kart(String name, String [][] anlamlar){
+        
+        this.anlamlar=anlamlar;
+        this.name=name;
+    }
+    
+    public String getName(){
+        
+        return this.name;
+    }
+    
+    public abstract String[][] getAnlamlar();
+    
 
-package ılkprogram;
-
-public class Circle extends GeometricObject {
-    
-    private double radius;
-    
-    public Circle(double radius){
+    public String toString(){
         
-        this.radius=radius;
-    }
-    
-    public double getRadius(){
-        
-        return this.radius;
-    }
-    
-    public void setRadius(double radius){
-        
-        this.radius=radius;
-    }
-    
-    public double getArea(){
-        
-        double alan;
-        
-        alan=radius*radius*(Math.PI);
-        return alan;
-    }
-    
-    public double getPerimeter(){
-        
-        double cevre;
-        
-        cevre=2*radius*(Math.PI);
-        return cevre;
-    }
-    
-    public double getDiameter(){
-        
-        return radius*2;
+        return ("Kart Ismi: "+name);
     }
 }
