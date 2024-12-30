@@ -1741,5 +1741,846 @@ public class Main {
 }
 
 
+public abstract class Burc {
 
+    protected String name;
+    protected String [] anlamlar;
+    
+    protected static String[] burclar = {"Koc", "Boga", "Ikizler", "Yengec", "Aslan","Basak","Terazi","Akrep","Yay","Oglak","Kova","Balik"};
+    
+    public Burc (String name){
+        
+        this.name=name;
+        
+    }
+    
+    public String getName(){
+        
+        return this.name;
+    }
+    
+    public abstract String[] getAnlamlar();
+    
+    public String toString(){
+        
+        return ("Burc Ismi: "+name);
+    }
+}
+
+
+public class AylikBurc extends Burc{
+    
+    public AylikBurc(String name) {
+        super(name);
+    }
+    
+    @Override
+    public String[] getAnlamlar() {
+        return aylikAnlamlar;
+    }
+    
+    protected static String[] aylikAnlamlar={
+      
+        //Koç
+         
+             "Genel Bakis: Ocak ayi Koc burclari icin hareketli bir baslangic vadediyor. \n"
+             + "Kariyer, iliskiler ve kisisel hedeflerinizde onemli adimlar \n"
+             + "atabileceginiz bu donemde, enerjinizi dogru yonlendirmeniz basariyi getirecek.\n\n"
+             
+             + "Kariyer: Ayin basinda Gunes’in Oglak burcundaki konumu kariyerinize ve toplumsal \n"
+             + "statunuze odaklanmanizi sagliyor. Is yerinde artan sorumluluklar ve dikkat \n"
+             + "gerektiren projeler gundemde olacak. Eger is degisikligi dusunuyorsaniz, \n"
+             + "19 Ocak’tan itibaren Merkur’un duz hareketine gecmesiyle daha net kararlar \n"
+             + "alabilirsiniz. Ozellikle ayin son haftasinda somut adimlar atarak kariyerinizde \n"
+             + "kalici baaarilar elde edebilirsiniz.\n\n"
+             
+             + "Ask ve Iliskiler: 10 Ocak’a kadar Venus’un Yay burcundaki etkisi, iliskilerde \n"
+             + "ozgurluk ve eglence arayisini artiriyor. Partnerinizle macera dolu bir tatil \n"
+             + "veya keyifli planlar yapabilirsiniz. Yalnizsaniz, bu donemde cesur ve farkli \n"
+             + "bir insanla tanisma ihtimaliniz yuksek. 25 Ocak’tan sonra duygusal derinlik \n"
+             + "ve baglilik ihtiyaciniz artabilir.\n\n"
+             
+             + "Saglik: Yogun is temposu nedeniyle dinlenmeye zaman ayirmaniz onemli. Stresi azaltmak \n"
+             + "icin spor veya meditasyon gibi aktivitelerden faydalanabilirsiniz. Bagisiklik sisteminizi \n"
+             + "desteklemek icin saglikli bir beslenme plani olusturun.\n\n"
+             
+             + "Onemli Tarihler:\n"
+             + "6 Ocak: Yengec burcundaki Dolunay, ailevi meseleleri gundeme getiriyor. Evle ilgili \n"
+             + "bir degisiklik planlayabilirsiniz.\n" 
+             + "31 Ocak: Oglak burcundaki Yeni Ay, is hayatinizda yeni bir baslangic yapma firsati sunuyor.",
+         
+         
+         //Boğa
+         
+             "Genel Bakis: Boga burclari icin Ocak ayi, hem icsel dengeyi saglamaya hem de finansal konularda \n"
+             + "planli ilerlemeye odaklanacaklari bir donem. Iliskilerde sabir ve guven on planda olacak.\n\n"
+             
+             + "Kariyer: Ayin basinda Gunes’in Oglak burcundaki konumu, uzun vadeli planlar yapmaniz icin harika \n"
+             + "bir firsat sunuyor. Disiplinli bir sekilde calisarak projelerinizi basariyla tamamlayabilirsiniz. \n"
+             + "Ozellikle egitim veya yurt disi baglantili islerde sansli bir donemdesiniz. 19 Ocak’tan sonra \n"
+             + "iletisim trafigi artabilir ve bekleyen isleriniz hiz kazanabilir.\n\n"
+             
+             + "Ask ve Iliskiler: Venus, Ocak ayinin ilk yarisinda Yay burcunda ilerlerken, iliskilerde spontane \n"
+             + "ve neseli bir enerji hakim. Partnerinizle daha acik ve samimi bir iletisim kurabilirsiniz. Yalnizsaniz, \n"
+             + "bu donemde hayatiniza girecek biriyle macera dolu bir baslangic yapabilirsiniz. Ayin son haftasinda \n"
+             + "iliskilerde daha ciddi ve uzun vadeli bir yaklasim sergileyebilirsiniz.\n\n"
+             
+             + "Saglik: Ruhsal ve fiziksel sagliginiza odaklanmaniz gereken bir donem. Is yukunuz artabilir; \n"
+             + "bu nedenle duzenli egzersiz ve dinlenmeye ozen gostermelisiniz. Saglikli beslenme \n"
+             + "aliskanliklarinizi gozden gecirmek faydali olacaktir.\n\n"
+             
+             + "Onemli Tarihler:\n"
+             + "15 Ocak: Ikizler Dolunayi, finansal konularda netlesme saglayabilir.\n" 
+             + "31 Ocak: Yeni Ay, is hayatinizda onemli bir donum noktasi olabilir.",
+         
+         
+         //İkizler
+         
+             "Genel Bakis: Ocak ayi, Ikizler burclari icin yenilikler ve iletisim firsatlariyla dolu olacak. \n"
+             + "Hem kariyer hem de sosyal cevrenizdeki hareketlilik, size yeni kapilar acabilir.\n\n"
+             
+             + "Kariyer: Merkur retrosunun sona ermesiyle, islerinizde bekleyen projelerinizi tamamlamak \n"
+             + "ve yeni girisimlerde bulunmak icin mukemmel bir doneme giriyorsunuz. Yaratici fikirleriniz \n"
+             + "ve pratik zekaniz sayesinde is hayatinizda fark yaratabilirsiniz. Ozellikle \n"
+             + "ekip calismalarinda liderlik rolu ustlenebilirsiniz.\n\n"
+             
+             + "Ask ve Iliskiler: Venus’un etkisiyle Ocak ayinin ilk yarisinda romantik ve heyecanli \n"
+             + "bir enerji hakim olacak. Partnerinizle birlikte kisa seyahatler veya romantik organizasyonlar \n"
+             + "planlayabilirsiniz. Yalnizsanız, sosyal cevrenizde dikkat ceken biriyle tanisabilirsiniz.\n\n"
+             
+             + "Saglik: Zihinsel yorgunlugu azaltmak icin meditasyon veya yoga gibi aktivitelerden faydalanabilirsiniz. \n"
+             + "Duzenli uyku ve saglikli beslenme rutini, enerjinizi yuksek tutmaniza yardimci olacaktir.\n\n"
+             
+             + "Onemli Tarihler:\n"
+             + "6 Ocak: Dolunay, ozel hayatinizda netlesmesi gereken konulari gundeme getirebilir.\n" 
+             + "20 Ocak: Sosyal cevrenizde yeni baglantilar kurabilirsiniz.",
+         
+         
+         //Yengeç
+         
+             "Genel Bakis: Ocak, Yengec burclari icin ailevi meseleler, duygusal baglar ve \n"
+             + "kariyer odakli bir ay olacak. Kendi ihtiyaclarinizla cevrenizdekilerin \n"
+             + "beklentileri arasinda denge kurmaya calisabilirsiniz.\n\n"
+             
+             + "Kariyer: Gunes’in Oglak burcundaki konumu, kariyerinizde uzun vadeli hedeflere \n"
+             + "yonelmenizi destekliyor. Bu donemde sabirli ve kararli bir sekilde ilerlemek onemlidir. \n"
+             + "Ozellikle 19 Ocak’tan itibaren is arkadaslarinizla olan iletisimde iyilesmeler yasanabilir \n"
+             + "ve bekleyen projelerde ilerleme saglayabilirsiniz. Ay sonuna dogru finansal bir artis \n"
+             + "veya kariyerinizde yukselme sansi dogabilir.\n\n"
+             
+             + "Ask ve Iliskiler: Ocak ayinin ilk haftasinda Dolunay, ailevi konulari gundeme getirebilir. \n"
+             + "Partnerinizle iliskinizde destekleyici bir donem gecirebilir, birlikte gecmis meseleleri \n"
+             + "cozebilirsiniz. Eger bir iliskiniz yoksa, guven ve baglilik arayisiniz bu ay on planda olacak.\n\n"
+             
+             + "Saglik: Duygusal hassasiyetiniz bu ay artabilir, bu yuzden ruhsal sagliginiza dikkat etmeniz \n"
+             + "onemli. Yoga, meditasyon veya doga yuyuyusleriyle kendinizi rahatlatabilirsiniz.\n\n"
+             
+             + "Onemli Tarihler:\n"
+             + "6 Ocak: Yengec burcundaki Dolunay, ailevi ve duygusal meselelerde netlesme saglayabilir.\n" 
+             + "31 Ocak: Yeni Ay, kariyerinizde yeni bir sayfa acma firsati sunuyor.",
+         
+         
+         //Aslan
+         
+             "Genel Bakis: Ocak ayi Aslan burclari icin yaraticiliginizi ve liderlik yeteneklerinizi \n"
+             + "sergilemek icin harika bir zaman. Hem sosyal cevreniz hem de kariyer hedefleriniz \n"
+             + "acisindan guclu bir donemdesiniz.\n\n"
+             
+             + "Kariyer: Ayin basinda, is hayatinizda sorumluluklarinizi artırabilir ve daha fazla \n"
+             + "gorunurluk kazanabilirsiniz. Yaraticiliginizi islerinize yansitarak fark yaratabilirsiniz. \n"
+             + "Ozellikle 19 Ocak’tan itibaren iletisim ve is birliklerinde buyuk bir akicilik yasanacak. \n"
+             + "Ay sonuna dogru, buyuk bir proje veya terfi haberi alabilirsiniz.\n\n"
+             
+             + "Ask ve Iliskiler: Ocak ayinin ilk yarisinda, Venus’un enerjisiyle ask hayatinizda heyecan ve \n"
+             + "romantizm artiyor. Partnerinizle aranizdaki uyum guclenebilir. Eger bir iliskiniz yoksa, \n"
+             + "bu donemde cekici bir enerjiniz olacak ve dikkatleri uzerinize cekebilirsiniz.\n\n"
+             
+             + "Saglik: Enerjik bir ay gecireceksiniz, ancak dinlenmeyi ihmal etmemeniz onemli. \n"
+             + "Duzenli egzersiz yaparak fiziksel gucunuzu artirabilirsiniz.\n\n"
+             
+             + "Onemli Tarihler:\n"
+             + "20 Ocak: Gunes’in Kova burcuna gecisi, iliskilerinizde ve sosyal cevrenizde hareketlilik yaratacak.\n" 
+             + "31 Ocak: Yeni Ay, kariyer hedeflerinizi yeniden sekillendirme firsati sunuyor.",
+             
+         //Başak
+             
+             "Genel Bakis: Basak burclari icin Ocak, planlama, uretkenlik ve uzun vadeli hedeflere \n"
+            + "odaklanma donemi. Ozellikle is hayatinda onemli firsatlar karsiniza cikabilir.\n\n"
+            
+            + "Kariyer: Gunes’in Oğlak burcundaki konumu, disiplinli calismanizi ve projelerinizi \n"
+            + "basariyla tamamlamanizi destekliyor. Is yerinde detayci ve titiz yapiniz sayesinde \n"
+            + "takdir toplayabilirsiniz. 19 Ocak’tan itibaren iletisim becerilerinizin artmasiyla, \n"
+            + "is gorusmeleri veya ekip calismalari daha verimli hale gelebilir.\n\n"
+            
+            + "Ask ve Iliskiler: İliskilerde bu ay partnerinizle uyumu artirabilir, duygusal baglarinizi \n"
+            + "guclendirebilirsiniz. Yalnizsaniz, ciddi ve mantikli bir iliskiye baslama sansi dogabilir. \n"
+            + "Ay sonuna dogru romantik surprizler yasayabilirsiniz.\n\n"
+            
+            + "Saglik: Yogun tempodan dolayi enerji seviyenizi yuksek tutmaya ozen gosterin. \n"
+            + "Saglikli beslenme ve duzenli egzersiz bu donemde size cok iyi gelecek.\n\n"
+            
+            + "Onemli Tarihler:\n"
+            + "6 Ocak: Yengec Dolunayi, sosyal cevrenizde yeni baglantilar kurmaniza yardimci olabilir.\n" 
+            + "31 Ocak: Yeni Ay, yaratici projelere baslama sansi sunuyor.",
+             
+         //Terazi
+             
+             "Genel Bakis: Ocak, Terazi burclari icin iliskilere ve kisisel hedeflere \n"
+            + "odaklanacaklari bir ay olacak. Hayatiniza yeni bir denge getirme firsati dogabilir.\n\n"
+            
+            + "Kariyer: Kariyerinizde is birlikleri ve ekip calismalari onem kazanacak. \n"
+            + "Ayin basinda sorumluluklarinizi gozden gecirebilir ve daha verimli calisma \n"
+            + "yollari bulabilirsiniz. 19 Ocak’tan itibaren Merkur’un duz hareketine \n"
+            + "gecmesiyle is hayatinizda bekleyen isleriniz hiz kazanabilir.\n\n"
+            
+            + "Ask ve Iliskiler: Venus’un etkisiyle iliskilerinizde romantizm ve uyum artiyor. \n"
+            + "Partnerinizle birlikte duygusal bir bag kurabilirsiniz. Yalnizsaniz, sosyal \n"
+            + "cevrenizden biriyle iliski baslatma ihtimaliniz yuksek.\n\n"
+            
+            + "Saglik: Ruhsal ve fiziksel dengenizi saglamak icin kendinize vakit \n"
+            + "ayirmalisiniz. Yoga veya meditasyon bu ay size cok iyi gelecek.\n\n"
+            
+            + "Onemli Tarihler:\n"
+            + "6 Ocak: Dolunay, ozel hayatinizda netlesmesi gereken konulari ortaya cikarabilir.\n" 
+            + "20 Ocak: Yeni bir sosyal cevreye girme sansi dogabilir.",
+             
+         //Akrep
+             
+             "Genel Bakis: Ocak ayi Akrep burclari icin donusum ve yeniliklerle dolu olacak. \n"
+            + "Hem kariyer hem de iliskilerde ciddi adimlar atabileceginiz bir donemdesiniz.\n\n"
+            
+            + "Kariyer: Gunes’in Oglak burcundaki konumu, is hayatinizda uzun vadeli projelere \n"
+            + "odaklanmanizi tesvik ediyor. Ayin ilk yarisinda, detaylara onem vererek basari elde \n"
+            + "edebilirsiniz. 19 Ocak’tan itibaren iletisimdeki engeller kalkiyor ve is gorusmeleri \n"
+            + "hiz kazaniyor. Ozellikle ay sonunda buyuk bir sorumlulugunuzun odulunu alabilirsiniz.\n\n"
+            
+            + "Ask ve Iliskiler: İliskilerinizde derinlesme zamani. Partnerinizle duygusal baginizi \n"
+            + "guclendirebilir ve gecmis meseleleri cozebilirsiniz. Yalnizsaniz, gizemli ve etkileyici \n"
+            + "biriyle tanisabilirsiniz. Venus’un destegiyle romantizm dolu bir donem gecireceksiniz.\n\n"
+            
+            + "Saglik: Enerjinizi dogru kullanmaya ozen gosterin. Meditasyon ve nefes egzersizleri \n"
+            + "ruhsal olarak sizi rahatlatabilir. Uyku duzeninize dikkat etmeniz onemli.\n\n"
+            
+            + "Onemli Tarihler:\n"
+            + "6 Ocak: Dolunay, egitim veya yurt disi baglantili konularda netlesme saglayabilir.\n" 
+            + "31 Ocak: Yeni Ay, kariyerinizde yeni bir baslangic yapma firsati sunuyor.",
+             
+         //Yay
+             
+             "Genel Bakis: Ocak ayi Yay burclari icin ozgurluk, yaraticilik ve yeni kesiflerle \n"
+            + "dolu bir donem olacak. Sosyal cevrenizde dikkat cekeceginiz bir ay sizi bekliyor.\n\n"
+            
+            + "Kariyer: Ayin basinda Gunes’in Oglak burcundaki konumu, finansal konulara odaklanmanizi \n"
+            + "sagliyor. Yeni gelir kaynaklari yaratabilir veya var olan birikimlerinizi degerlendirebilirsiniz. \n"
+            + "19 Ocak’tan itibaren iletisim ve yaraticilik gerektiren islerinizde buyuk bir akicilik yasanacak.\n\n"
+            
+            + "Ask ve Iliskiler: Romantik ve eglenceli bir ay sizi bekliyor. Partnerinizle birlikte spontane \n"
+            + "ve keyifli zamanlar gecirebilirsiniz. Eger bir iliskiniz yoksa, sosyal cevrenizden biriyle \n"
+            + "tutkulu bir baslangic yapabilirsiniz. Ask hayatinizda surpriz gelismelere acik olun.\n\n"
+            
+            + "Saglik: Fiziksel aktiviteler ve acik hava sporlari enerjinizi artiracak. \n"
+            + "Yogun tempodan dolayi duzenli beslenmeye dikkat etmeniz onemli.\n\n"
+            
+            + "Onemli Tarihler:\n"
+            + "6 Ocak: Dolunay, finansal konularda onemli gelismeler getirebilir.\n" 
+            + "20 Ocak: Yeni bir egitim veya seyahat plani yapabilirsiniz.",
+             
+         //Oğlak
+             
+             "Genel Bakis: Ocak ayi, Oglak burclari icin kisisel hedeflere odaklanacaklari \n"
+            + "ve disiplinle ilerleyecekleri bir donem. Guclu enerjilerle kariyerinizde \n"
+            + "onemli ilerlemeler kaydedebilirsiniz.\n\n"
+            
+            + "Kariyer: Gunes’in burcunuzdaki hareketi, liderlik becerilerinizi sergilemeniz \n"
+            + "icin harika bir donem sunuyor. Ayin basinda sorumluluklariniz artsa da, disiplinli \n"
+            + "calismaniz sayesinde buyuk basarilar elde edebilirsiniz. 19 Ocak’tan itibaren is \n"
+            + "gorusmeleri ve projelerde daha hizli sonuclar alabilirsiniz.\n\n"
+            
+            + "Ask ve Iliskiler: İliskilerde ciddiyet ve istikrar aradiginiz bir donemdesiniz. \n"
+            + "Partnerinizle gelecek planlari yapabilirsiniz. Yalnizsaniz, hayatiniza ciddi \n"
+            + "bir iliski arayisinda olan biri girebilir.\n\n"
+            
+            + "Saglik: Enerjiniz yuksek olacak, ancak asiri calismaktan kacinin. \n"
+            + "Dengeli bir yasam tarzi benimseyerek sagliginizi koruyabilirsiniz.\n\n"
+            
+            + "Onemli Tarihler:\n"
+            + "6 Ocak: Dolunay, iliskilerde netlesme saglayabilir.\n" 
+            + "31 Ocak: Yeni Ay, kisisel hedeflerinizde yeni bir baslangic sunuyor.",
+             
+         //Kova
+             
+             "Genel Bakis: Ocak, Kova burclari icin hem icsel bir farkindalik \n"
+            + "hem de sosyal hareketlilik donemi olacak. Gelecege yonelik \n"
+            + "hedeflerinizi sekillendirmek icin ideal bir zaman.\n\n"
+            
+            + "Kariyer: Ayin basinda kariyerinizle ilgili planlarinizi gozden \n"
+            + "gecirerek stratejik adimlar atabilirsiniz. 19 Ocak’tan itibaren \n"
+            + "is hayatinizda yenilikler ve iletisim trafigi hiz kazanacak. \n"
+            + "Yaraticiliginizi sergileyerek dikkat cekebilirsiniz.\n\n"
+            
+            + "Ask ve Iliskiler: Ocak ayinin ilk yarisinda daha ice donuk bir \n"
+            + "ruh hali icinde olabilirsiniz. Ay sonuna dogru, sosyal cevreniz \n"
+            + "hareketlenecek ve yeni insanlarla tanisma fırsatiniz artacak. \n"
+            + "Partnerinizle birlikte gelecege yonelik planlar yapabilirsiniz.\n\n"
+            
+            + "Saglik: Zihinsel yorgunlugu azaltmak icin kendinize zaman ayirmaniz \n"
+            + "onemli. Meditasyon ve doga yuruyusleri ruhsal sagliginizi destekleyebilir.\n\n"
+            
+            + "Onemli Tarihler:\n"
+            + "6 Ocak: Dolunay, gecmis meselelerde netlesme saglayabilir.\n" 
+            + "20 Ocak: Gunes’in burcunuza gecmesiyle enerjiniz yukseliyor.",
+             
+         //Balık
+             
+             "Genel Bakis: Balik burclari icin Ocak ayi hayallerinizi gercege \n"
+            + "donusturmek icin adim atabileceginiz bir donem olacak. Hem kariyer \n"
+            + "hem de sosyal cevrede dikkat cekeceginiz bir ay sizi bekliyor.\n\n"
+            
+            + "Kariyer: Gunes’in Oğlak burcundaki konumu, is hayatinizda guclu baglantilar \n"
+            + "kurmanizi ve projelerinizde ilerleme kaydetmenizi destekliyor. Ozellikle \n"
+            + "ekip calismalari ve yaratici projelerde basarili olabilirsiniz. 19 Ocak’tan \n"
+            + "itibaren iletisimde daha akici bir donem basliyor.\n\n"
+            
+            + "Ask ve Iliskiler: Partnerinizle romantik bir bag kurabilirsiniz. \n"
+            + "Yalnizsaniz, ay sonunda hayatiniza yeni bir ask girebilir. Sosyal \n"
+            + "cevrenizden biriyle baslayacak bir iliski surpriz olabilir.\n\n"
+            
+            + "Saglik: Fiziksel ve ruhsal dengenize ozen gostermelisiniz. \n"
+            + "Meditasyon ve spor, enerjinizi yukseltecek. Dinlenmeyi ihmal etmeyin.\n\n"
+            
+            + "Onemli Tarihler:\n"
+            + "6 Ocak: Dolunay, arkadaslik iliskilerinizde yeni bir farkindalik getirebilir.\n" 
+            + "31 Ocak: Yeni Ay, kariyer hedeflerinizde yeni bir baslangic yapma firsati sunuyor."
+            
+    };    
+}
+
+
+public class YillikBurc extends Burc{
+    
+    public YillikBurc(String name) {
+        super(name);
+    }
+    
+    @Override
+    public String[] getAnlamlar() {
+        return yillikAnlamlar;
+    }
+    
+    protected static String[] yillikAnlamlar={
+        
+        //Koç
+        
+            "Genel Bakis: 2025 yili, Koç burclari icin buyuk degisimlerin ve cesur \n"
+            + "kararlarin yili olacak. Bu yil, Uranus’un etkisiyle beklenmedik degisimlere \n"
+            + "acik olacaksiniz. Hem kariyerinizde hem de ozel hayatinizda yeni firsatlar \n"
+            + "sizi bekliyor. Saturn’un etkisiyle, sorumluluklariniz artacak ve gelecege \n"
+            + "yonelik daha saglam adimlar atmak icin gereksiz risklerden kacinmaniz gerekebilir.\n\n"
+            
+            + "Kariyer: Is hayatinizda cesur adimlar atarak kendinizi gosterebilir ve onemli \n"
+            + "projelerde liderlik rolu ustlenebilirsiniz. Ancak dikkatli olmali, firsatlari \n"
+            + "degerlendirmek icin fazla aceleci davranmamalisiniz. 2025, is degisikligi veya yeni bir \n"
+            + "alanda kendinizi gelistirme firsati sunabilir. Parasal acidan buyuk kazanclar mumkun.\n\n"
+            
+            + "Ask ve Iliskiler: 2025, ask hayatinizda degisim ve yenilik yili olacak. Mevcut iliskinizde \n"
+            + "bir sonraki adima gecmek, evlilik veya birlikte yeni bir yolculuga cikmak icin olumlu bir \n"
+            + "yıl olabilir. Yalniz Koclar icin, daha ozgur ve cesur bir sekilde aski kesfetme firsatlari \n"
+            + "dogacak. Uranus’un etkisiyle aniden bir iliskiye adim atabilirsiniz. Ancak, duygusal \n"
+            + "anlamda daha stabil bir iliski isteginiz artabilir.\n\n"
+            
+            + "Saglik: 2025 yılı, enerjinizi yuksek tutmanin ve fiziksel sagliginiza daha fazla odaklanmanin \n"
+            + "onemi konusunda uyarici olacak. Duzenli spor yaparak formda kalabilir, saglikli yasam \n"
+            + "aliskanliklari benimseyebilirsiniz. Ayrica ruhsal sagliginiz da bu yil onemli olacak, \n"
+            + "stresle basa cikmak icin meditasyon gibi rahatlatici aktiviteler faydali olabilir.",
+        
+        //Boğa
+        
+            "Genel Bakis: 2025 yili, Boga burclari icin finansal anlamda onemli bir yil olacak. \n"
+            + "Uranus'un burcunuzdaki etkisi, sizi yeni baslangiclara ve surpriz degisimlere acik \n"
+            + "tutacak. Kisisel gelisiminiz icin onemli firsatlar dogabilir ve 2025’te daha ozgur ve \n"
+            + "bagimsiz bir sekilde hareket etme isteginiz artabilir. Hem is hayatinizda hem de ozel \n"
+            + "hayatinizda daha fazla sorumluluk almaniz gerekebilir.\n\n"
+            
+            + "Kariyer: Kariyerinizde onemli bir donum noktasina gelebilir ve guclu finansal kararlar \n"
+            + "alabilirsiniz. Bu yil, yeni bir is firsati ya da kariyerinizi ilerletecek bir egitim \n"
+            + "programina katilma sansi dogabilir. Uranus sayesinde kariyerinizde surpriz gelismeler \n"
+            + "yasanabilir ve is hayatinizda bazi yenilikci projelerde yer alabilirsiniz. Finansal anlamda \n"
+            + "guvenli bir yil olacak ancak dikkatli ve stratejik adimlar atmaniz onemli.\n\n"
+            
+            + "Ask ve Iliskiler: Iliskilerinizde guven arayisiniz artacak ve partnerinizle birlikte \n"
+            + "gelecege dair saglam adimlar atma ihtiyaci duyabilirsiniz. 2025, daha derin ve kalici \n"
+            + "baglar kurma yili olabilir. Yalnizsaniz, stabil ve guven veren bir iliski isteginiz \n"
+            + "daha fazla on planda olacak. Sosyal cevrenizden biriyle yeni bir iliskiye adim \n"
+            + "atabilirsiniz. Ask hayatinda ani degisimler soz konusu olabilir.\n\n"
+            
+            + "Saglik: 2025 yilinda sagligiza ekstra dikkat etmeniz gerekecek. Duzenli egzersiz \n"
+            + "yaparak fiziksel sagliginizi iyilestirebilir, psikolojik olarak da kendinizi \n"
+            + "dengelemeye calismalisiniz. Uranus’un etkisiyle, aliskanliklarinizi \n"
+            + "degistirebilir ve saglikli bir yasam tarzi benimseyebilirsiniz.",
+        
+        //İkizler
+        
+            "Genel Bakis: 2025, Ikizler burclari icin kisisel gelisim, yaratici projeler ve ailevi \n"
+            + "konulara odaklanacaklari bir yil olacak. Uranus ve Pluto'nun etkisiyle, hayatinizda \n"
+            + "koklu degisiklikler yapma isteginiz artacak. Kendinizi daha ozgur ve rahat hissetme \n"
+            + "isteginiz baskin olacak. 2025 yilinda, kisisel hedefleriniz ve is hayatiniz \n"
+            + "arasinda denge kurmaniz gerekebilir.\n\n"
+            
+            + "Kariyer: Kariyerinizde yenilikci ve yaratici projelere odaklanabilirsiniz. Ozellikle \n"
+            + "2025'in ilk yarisinda isinizdeki bazi rutinlerden siyrilarak daha heyecan verici \n"
+            + "projelere adim atma firsatlari olabilir. Uranus'un etkisiyle ani degisimler, isinizde \n"
+            + "bir devrim yaratabilir. Ancak bu donemde daha fazla sorumluluk almaniz gerekebilir \n"
+            + "ve bu sorumluluklar sizi hem zorlayabilir hem de buyutebilir.\n\n"
+            
+            + "Ask ve Iliskiler: Ask hayatinizda ani degisimler yasanabilir. Uranus'un etkisiyle \n"
+            + "mevcut iliskinizde degisim ve donusum olasiligi artiyor. Eger yalnizsaniz, daha \n"
+            + "ozgur ve maceraci bir ask arayisina girebilirsiniz. 2025 yilinda iliskinizde surpriz \n"
+            + "gelismeler yasanabilir ve ciddi bir adim atmak mumkun olabilir. Yeni iliskiler, \n"
+            + "2025'te daha cok basinizi dondurebilir.\n\n"
+            
+            + "Saglik: Saglik konusunda yil boyunca dikkatli olmaniz gereken bir donemdesiniz. \n"
+            + "Stresle basa cikmak icin zihinsel sagliginiza ozen gostermeli, vucudunuzu dinlendirmeniz \n"
+            + "gereken zamanlari iyi planlamalisiniz. Duzenli spor yapmak ve saglikli beslenmek \n"
+            + "2025 yilinda size oldukca faydali olacak.",
+        
+        //Yengeç
+        
+            "Genel Bakis: 2025 yili Yengec burclari icin kariyer, aile ve icsel dengeye odaklanma \n"
+            + "yili olacak. 2025 boyunca, gecmisten gelen sorumluluklar ve duygusal yuklerle basa \n"
+            + "cikmaya calisabilirsiniz. Uranus ve Neptun'un etkisiyle, hayata dair onemli \n"
+            + "farkindaliklar kazanarak kisisel donusum gecireceksiniz.\n\n"
+            
+            + "Kariyer: Yengec burclari, 2025 yilinda kariyerlerinde onemli bir ivme kazanacak. \n"
+            + "Is hayatinizda atacaginiz adimlar, gelecekteki basarilariniz icin buyuk bir temel \n"
+            + "olusturabilir. Ancak, kariyerinizdeki degisiklikler, sizi baslangicta zorlayabilir. \n"
+            + "Yeni projeler, yeni is firsatlari veya kariyer degisikligi gundeme gelebilir. Is \n"
+            + "arkadaslarinizla uyum icinde olmak ve onlari dinlemek isinizi kolaylastirabilir.\n\n"
+            
+            + "Ask ve Iliskiler: Ask hayatinizda, iliskilerde derinlesme ve bag kurma zamani. \n"
+            + "Bu yil, partnerinizle daha fazla vakit gecirerek iliskinizde duygusal baglarinizi \n"
+            + "guclendirebilirsiniz. Eger yalnizsaniz, size cok yakin bir cevreden biriyle iliskiye \n"
+            + "baslayabilirsiniz. 2025 yilinda daha kalici ve saglikli iliskiler arayisinda olabilirsiniz.\n\n"
+            
+            + "Saglik: Yengec burclari icin 2025 yili, ruhsal dengeyi bulmak ve saglikli yasam \n"
+            + "aliskanliklarini hayatiniza entegre etmek icin uygun bir donem. Stresle basa cikmak \n"
+            + "icin meditasyon veya nefes egzersizleri yapabilirsiniz. Ayrica, fiziksel sagliginizi \n"
+            + "ihmal etmemek ve egzersizlere agirlik vermek onemli olacak.",
+        
+        //Aslan
+        
+            "Genel Bakİs: 2025 yili, Aslan burclari icin kisisel gelisim, yaraticilik ve icsel \n"
+            + "guclerini kesfetme yili olacak. Uranus ve Pluto'nun etkisiyle, eski \n"
+            + "aliskanliklarinizdan ve guvenli bolgenizden cikmanız gerektigini hissedebilirsiniz. \n"
+            + "Ancak, kendinizi bu surecte daha guclu ve ozgur hissedeceksiniz.\n\n"
+            
+            + "Kariyer: 2025, kariyerinizde yenilikci adimlar atma yili olabilir. Ozellikle \n"
+            + "yaratici projelere yonelerek is hayatinizda yeni firsatlar yaratabilirsiniz. \n"
+            + "Bu yil, ozellikle baslangicta kendinizi belirsiz bir ortamda bulabilirsiniz. \n"
+            + "Ancak ilerleyen aylarda, tum cabalarinizin karsiligini alacak ve daha guclu bir \n"
+            + "pozisyonda olacaksiniz. Uranus’un etkisiyle is hayatinizda surpriz degisiklikler \n"
+            + "olabilir, ancak bunlar uzun vadede size fayda saglayacaktir.\n\n"
+            
+            + "Ask ve Iliskiler: Ask hayatinizda 2025, duygusal derinlik arayisina gireceginiz bir yil \n"
+            + "olacak. Mevcut iliskinizde daha fazla guven ve samimiyet isteyebilirsiniz. Partnerinizle \n"
+            + "aranizdaki bglari guclendirebilir, birlikte gelecege yonelik daha buyuk adimlar \n"
+            + "atabilirsiniz. Yalnizsaniz, iliikinin baslangici sizin icin ozel ve farkli bir deneyim \n"
+            + "olacak. Uranus, iliskinizde spontane ve heyecan verici bir degisim getirebilir.\n\n"
+            
+            + "Saglik: Saglik acisindan 2025, ruhsal sagliginiza ve stresle baca cikma yontemlerinize \n"
+            + "odaklanacaginiz bir yıl olabilir. Fiziksel sagliginizda iyilesmeler yasayabilirsiniz ancak \n"
+            + "uzun sureli stresten kacinmak icin rahatlatici aktivitelerle ilgilenmelisiniz. Duzenli \n"
+            + "egzersiz yaparak fiziksel gucunuzu artirabilir, ruhsal dengeyi saglamak icin meditasyon ve \n"
+            + "yoga gibi yontemleri deneyebilirsiniz.",
+        
+        //Başak
+        
+            "Genel Bakis: 2025 yili, Basak burclari icin aile, ev ve kisisel yasam konusunda buyuk bir \n"
+            + "degisim yili olacak. Uranus ve Saturn'un etkisiyle, hayatinizdaki temelleri guclendirmek \n"
+            + "ve geleceginizi planlamak icin firsatlar dogacak. Hem duygusal hem de maddi anlamda \n"
+            + "daha guvenli bir yil gecirmek isteyeceksiniz.\n\n"
+            
+            + "Kariyer: Basak burclari, 2025 yilinda kariyerlerinde onemli bir ivme kazanabilirler. \n"
+            + "Bu yil, kendinizi daha fazla liderlik pozisyonunda bulabilirsiniz. Ayrica, isinizde daha \n"
+            + "fazla sorumluluk almak ve kariyerinizi bir ust seviyeye tasimak icin guclu firsatlar \n"
+            + "dogacak. Uranus’un etkisiyle is yerinde bazi yenilikler, hatta degisimler yasanabilir, \n"
+            + "ancak bu gelismeler sonunda uzun vadeli basarilar getirecek. Iyi bir planlama ve \n"
+            + "strateji ile buyuk kazanimlar elde edebilirsiniz.\n\n"
+            
+            + "Ask ve Iliskiler: Ask hayatinizda, duygusal derinliklere inmeye ve daha saglam baglar \n"
+            + "kurmaya meyilli olacaksiniz. Eger mevcut iliskinizde guven sorunlari varsa, bunlari \n"
+            + "cozmek ve iliskinizi daha saglam temellere oturtmak icin bir donum noktasi olabilir. \n"
+            + "Yalnizsaniz, bu yil daha ciddi ve uzun vadeli bir iliski kurma sansiniz yuksek. \n"
+            + "Uranus’un etkisiyle, iliskilere dair surpriz gelismeler olabilir.\n\n"
+            
+            + "Saglik: 2025 yili, Basak burclari icin ruhsal ve fiziksel saglik acisindan onemli bir \n"
+            + "yil olacak. Sagliginizla ilgilenmek ve kendinizi iyilestirmek icin gereken zamani \n"
+            + "ayirmalisiniz. Duzenli spor yapmak ve saglikli bir yasam tarzini benimsemek, uzun \n"
+            + "vadede daha saglikli olmaniza yardimci olacak. Ayrica, stresi azaltmak ve zihinsel \n"
+            + "sagliginizi korumak icin rahatlatici ontemlere yonelmek onemli olacak.",
+        
+        //Terazi
+        
+            "Genel Bakis: 2025 yili, Terazi burclari icin kisisel gelisim, egitim ve sosyal cevreye \n"
+            + "odaklanacak bir yil olacak. Uranus ve Pluto’nun etkisiyle, kendi fikirlerinizi ve \n"
+            + "degerlerinizi yeniden gozden gecirebilirsiniz. Hayatinizdaki bazi kaliplari kirarak \n"
+            + "yeni bir perspektif gelistireceksiniz.\n\n"
+            
+            + "Kariyer: Kariyer hayatinizda 2025 yilinda onemli firsatlar olabilir. Yeni projelere adim \n"
+            + "atabilir, is hayatinizda kendinizi daha cok ifade etme sansi bulabilirsiniz. Ancak, yenilikci \n"
+            + "dusunme ve risk alma konusunda temkinli olmalisiniz. Ozellikle is arkadaslarinizla uyumlu \n"
+            + "calismak, hedeflerinize ulasmanizi hizlandiracaktir. Ayrica, Uranus’un etkisiyle egitim \n"
+            + "ve ogretim alanlarinda yeni firsatlar dogabilir.\n\n"
+            
+            + "Ask ve Iliskiler: Ask hayatinizda 2025 yili, daha ozgur ve bagimsiz iliskiler arayisina \n"
+            + "girebileceginiz bir donem olacak. Mevcut iliskinizde daha fazla ozgurluk isteyebilirsiniz. \n"
+            + "Yalnizsaniz, sosyal cevrenizden biriyle tanisabilirsiniz. 2025, aski ve iliskileri daha \n"
+            + "farkli bir sekilde deneyimleme yili olabilir. Uranus, ani ve heyecan verici bir \n"
+            + "iliskiye adim atmaniza neden olabilir.\n\n"
+            
+            + "Saglik: 2025 yili saglik acisindan yeniliklere acik bir donem olacak. Vucudunuzun \n"
+            + "ihtiyaclarina dikkat etmek, saglikli aliskanliklar edinmek on plana cikacak. Zihinsel \n"
+            + "sagliginizla ilgilenmek de onemli olacak; meditasyon, yoga veya psikolojik destek \n"
+            + "almak bu yil sizi rahatlatabilir.",
+        
+        //Akrep
+        
+            "Genel Bakis: 2025 yili, Akrep burclari icin is ve ozel hayatlarinda daha fazla derinlik \n"
+            + "ve donusum arayisinda olacaklari bir yil olacak. Uranus’un etkisiyle finansal ve \n"
+            + "duygusal alanlarda buyuk degisimlere acik olacaksiniz. Gecmiateki kaliplarinizi \n"
+            + "kirarak daha ozgur bir yasam tarzi benimseyeceksiniz.\n\n"
+            
+            + "Kariyer: Akrep burclari, 2025 yilinda kariyerlerinde buyuk degisimlere adim atabilir. \n"
+            + "Yenilikci projelere yonelmek ve liderlik pozisyonlarina gelmek icin guclu bir yil \n"
+            + "olacak. Ancak, risk alirken dikkatli olmalisiniz, pzellikle finansal kararlar konusunda \n"
+            + "temkinli olmaniz gerekebilir. Uranus’un etkisiyle is hayatinizda surpriz gelismeler \n"
+            + "yasanabilir. Bu yil, cok istediginiz bir terfi ya da is degisikligi firsatlari dogabilir.\n\n"
+            
+            + "Ask ve Iliskiler: Ask hayatinizda 2025 yili, derinlesme ve donusum yili olacak. \n"
+            + "Mevcut iliskinizde, daha derin bir bag kurmak ve duygusal olarak birbirinizi anlamak \n"
+            + "isteyebilirsiniz. Eger yalnizsaniz, surpriz bir ask hayatiniza girebilir. Uranus, \n"
+            + "iliskinizde ani gelismeler yasanmasina neden olabilir. Kendi ic dunyanizda da degisim \n"
+            + "yasayarak daha ozgur bir ask anlayisina sahip olabilirsiniz.\n\n"
+            
+            + "Saglik: Saglik acisindan bu yil, fiziksel ve ruhsal dengeyi bulmaya calisacaginiz bir \n"
+            + "donem olacak. Saglikli yasam tarzini benimsemek ve vucudunuzu dinlendirmek onem kazanacak. \n"
+            + "Ayrica, zihinsel sagliginizi korumak icin stres yonetimi konusunda dikkatli olmalisiniz.",
+        
+        //Yay
+        
+            "Genel Bakis: 2025 yili, Yay burclari icin kisisel degerler, finansal istikrar ve icsel \n"
+            + "kesif yili olacak. Uranus’un etkisiyle maddi kaynaklarinizi yeniden duzenleme \n"
+            + "ve daha saglam temeller atma firsatlari dogabilir. Bu yil, hayatinizda yeniliklere, \n"
+            + "degisimlere acik olacaginiz bir donem olacak, ancak bu degisimlerin size uzun \n"
+            + "vadede guven ve huzur getirecegini fark edeceksiniz.\n\n"
+            
+            + "Kariyer: Yay burclari icin kariyer alaninda 2025 yili onemli firsatlar sunacak. \n"
+            + "Ozellikle maddi kazanclarinizi arttiracak yeni projeler veya is firsatlari dogabilir. \n"
+            + "Is hayatinizda yeni bir duzen olusturabilir, uzun vadede size fayda saglayacak \n"
+            + "adimlar atabilirsiniz. Uranus sayesinde ani kariyer degigimleri ve surpriz basarilar \n"
+            + "yasanabilir. Ancak, risk almak konusunda dikkatli olmaniz gerekebilir, zira \n"
+            + "aceleci kararlar size zarar verebilir.\n\n"
+            
+            + "Ask ve Iliskiler: Ask hayatinizda 2025 yili, daha ciddi ve guven veren iliskilere \n"
+            + "yonelme yili olabilir. Mevcut iliskinizde daha fazla guven arayisiniz olacak ve \n"
+            + "bu da iliskinizin daha saglam temellere dayanmasini saglayacak. Eger yalnizsaniz, \n"
+            + "size hitap eden, derin bir bag kurabileceginiz birisiyle tanisabilirsiniz. \n"
+            + "Ask hayatinizda Uranus’un etkisiyle surpriz gelismeler yasanabilir, fakat \n"
+            + "bu gelismeler baslangicta size karmasik gelebilir.\n\n"
+            
+            + "Saglik: 2025 yili saglik acisindan sizi zinde tutacak ve yasam enerjinizi artiracak \n"
+            + "bir yil olacak. Duzenli spor ve saglikli beslenme aliskanliklari, enerjinizi yuksek \n"
+            + "tutmaniza yardimci olacak. Ayrica, ruhsal sagliginiza da dikkat etmeniz gereken bir yil. \n"
+            + "Stresle basa cikabilmek icin rahatlatici aktivitelerle ilgilenmelisiniz. \n"
+            + "Zihinsel dengeyi bulmak icin meditasyon veya yoga gibi yontemleri deneyebilirsiniz.",
+        
+        //Oğlak
+        
+            "Genel Bakis: 2025 yili, Oglak burclari icin toplumsal statu, iliskiler ve kisisel hedeflere \n"
+            + "odaklanma yili olacak. Uranus ve Pluto’nun etkisiyle, daha fazla ozgurluk ve yenilik \n"
+            + "arayisiniz artacak. 2025 yili, hem ozel hayatinizda hem de is hayatinizda buyuk \n"
+            + "donusumlere acik olacaginiz bir donem olacak. Bu yil, duygusal ve finansal \n"
+            + "anlamda buyuk ilerlemeler kaydedebilirsiniz.\n\n"
+            
+            + "Kariyer: 2025 yili, kariyerinizde onemli bir donum noktasi olabilir. Yuksek hedefler \n"
+            + "pesinde kosacak ve kariyerinizi bir ust seviyeye tasima firsatlari yakalayacaksiniz. \n"
+            + "Uranus sayesinde, is hayatinizda surpriz degisiklikler olabilir. Bu yil, isinizde daha \n"
+            + "fazla yenilik ve farklilik arayisi içinde olabilirsiniz. Eger is degisikligi yapmak \n"
+            + "istiyorsaniz, 2025 yili bu adimi atmak icin uygun bir zaman olabilir. Ancak, yeni \n"
+            + "firsatlar konusunda aceleci olmamalisiniz, iyi bir planlama yapmaniz gerekecek.\n\n"
+            
+            + "Ask ve Iliskiler: Ask hayatinizda 2025, daha derin ve anlamli iliskiler kurma yili olabilir. \n"
+            + "Mevcut iliskinizde duygusal baglarinizi daha guclu bir hale getirebilir, gelecege dair \n"
+            + "daha ciddi adimlar atabilirsiniz. Yalnizsaniz, guvene dayali bir iliski arayisinda olacak \n"
+            + "ve bu yil, size hitap eden bir partnerle tanisabilirsiniz. Uranus’un etkisiyle, \n"
+            + "iliskilerde ani ve beklenmedik gelismeler yasanabilir.\n\n"
+            
+            + "Saglik: 2025 yilinda sagliginiz icin guclu bir yil olacak. Ancak, dikkatli olmaniz \n"
+            + "gereken nokta, is ve ozel yasam dengesini iyi kurmak olacak. Stresli durumlar sagliginizi \n"
+            + "etkileyebilir, bu nedenle stres yonetimi konusunda ozen gostermelisiniz. Fiziksel sagliginizi \n"
+            + "korumak icin duzenli egzersiz yapmaniz onemli. Ayrica, ruhsal sagliginizi dengelemek \n"
+            + "icin kendinize zaman ayirmali ve rahatlatici aktivitelerle stres atmalisiniz.",
+        
+        //Kova
+        
+            "Genel Bakis: 2025 yili, Kova burclari icin kariyer, toplumsal statu ve kisisel hedeflere ulasmak \n"
+            + "icin onemli firsatlar sunacak. Uranus ve Pluto’nun etkisiyle, is hayatinizda radikal \n"
+            + "degisiklikler yapabilir ve toplumsal alanda daha fazla gorunur olabilirsiniz. Bu yil, \n"
+            + "yasaminiza yeni bir yon verme ve kisisel bagimsizliginizi guclendirme yili olacak.\n\n"
+            
+            + "Kariyer: 2025, kariyerinizde onemli degisimlerin yasanacagi bir yil olacak. Uranus’un \n"
+            + "etkisiyle, is hayatinizda ani degisiklikler ve surpriz firsatlar olabilir. Bu yil, \n"
+            + "kendinizi yeni projelere ve yeni is alanlarina yonlendirebilirsiniz. Ayrica, kariyerinizde \n"
+            + "ilerlemek ve toplumsal statunuzu artirmak icin yeni stratejiler gelistireceksiniz. \n"
+            + "Yaratici ve yenilikci projelere katilabilir, kariyerinizde kendinizi daha guclu \n"
+            + "bir sekilde ifade edebilirsiniz.\n\n"
+            
+            + "Ask ve Iliskiler: Ask hayatinizda 2025 yili, daha ozgur ve bagimsiz bir donem olabilir. \n"
+            + "Mevcut iliskinizde, partnerinizle kisisel ozgurluklerinizi daha iyi anlamaya calisabilir \n"
+            + "ve birbirinize alan taniyarak daha guclu bir bag kurabilirsiniz. Eger yalnizsaniz, bu yil, \n"
+            + "kendinizi daha ozgur hissedeceginiz bir iliskiye adim atabilirsiniz. Uranus’un etkisiyle, \n"
+            + "ask hayatinizda surpriz gelismeler yasanabilir.\n\n"
+            
+            + "Saglik: 2025 yilinda sagliginiza dikkat etmeniz gereken bir yil olacak. Fiziksel \n"
+            + "sagliginizla ilgilenmek ve duzenli egzersiz yaparak enerji seviyenizi yuksek tutmak \n"
+            + "onemli olacak. Ayrica, stresle basa cikmak icin rahatlatici aktivitelerle ilgilenmek, \n"
+            + "zihinsel sagliginizi korumak icin faydali olacak.",
+        
+        //Balık
+        
+            "Genel Bakis: 2025 yili, Balik burclari icin finansal guvenlik, kisisel hedefler ve \n"
+            + "kariyer gelisimi acisindan onemli bir yil olacak. Uranus ve Neptun’un etkisiyle, \n"
+            + "hayatta daha fazla denge ve icsel huzur arayisina girebilirsiniz. Bu yil, maddi \n"
+            + "acidan saglam temeller atmak icin uygun firsatlar dogacak.\n\n"
+            
+            + "Kariyer: 2025 yili, kariyerinizde buyuk ilerlemeler kaydedebileceginiz bir yil olacak. \n"
+            + "Uranus sayesinde, is hayatinizda yenilikci adimlar atabilir ve yaratici projelere yonelerek \n"
+            + "fark yaratabilirsiniz. Finansal anlamda guvenli bir yil olacak ve uzun vadeli projelere \n"
+            + "yonelebilirsiniz. Isinizde daha fazla sorumluluk alarak kariyerinize yeni bir yon \n"
+            + "verebilirsiniz. Bu yil, kariyerinizi bir ust seviyeye tasiyacak firsatlar dogabilir.\n\n"
+            
+            + "Ask ve Iliskiler: Ask hayatinizda 2025, daha derin ve guvene dayali iliskiler kurma yili \n"
+            + "olacak. Mevcut iliskinizde daha fazla sadakat ve guven arayisiniz olacak. Yalnizsaniz, \n"
+            + "bu yil, sizinle ayni degerleri paylasan biriyle tanisabilirsiniz. Uranus’un etkisiyle, \n"
+            + "ask hayatinizda surpriz gelismeler yasanabilir. Iliskilerdeki degisimlere acik olmali \n"
+            + "ve yeni firsatlar karsisinda cesur adimlar atmalisiniz.\n\n"
+            
+            + "Saglik: 2025 yili, Balik burclari icin saglik acisindan dengeyi bulma yili olacak. \n"
+            + "Vucudunuzu dinlendirmeniz ve saglikli aliskanliklar edinmeniz onemli olacak. \n"
+            + "Ayrica, ruhsal sagliginizda da dengeyi bulmak icin meditasyon ve rahatlatici \n"
+            + "aktiviteler yaparak icsel huzuru koruyabilirsiniz."
+    };
+}
+
+
+
+import java.util.Scanner;
+
+public class BurcYorumu {
+    
+    public int gun;
+    public int ay;
+    public String secim;
+    public String burc;
+    public int tercih;
+    
+    
+    Scanner klavye = new Scanner(System.in);
+    
+    
+    public BurcYorumu(){
+        
+        System.out.println("Burcunuzu biliyor musunuz?");
+        //System.out.println("Biliyorsaniz 1, bilmiyorsaniz 2 rakamini tuslayiniz.");
+        secim=klavye.next().toLowerCase();
+    }
+    
+    
+    public String burcHesabi(){
+       
+        switch (secim) {
+            case "evet":
+                System.out.print("Lutfen burcunuzu giriniz: ");
+                burc=klavye.next().toUpperCase();
+                System.out.println();
+                break;
+            case "hayır":
+                System.out.print("Dogum ayinizi giriniz(1-12): ");
+                ay=klavye.nextInt();
+                System.out.print("Dogum gununuzu seciniz (1-31):");
+                gun=klavye.nextInt();
+                if ((ay == 1 && gun >= 21) || (ay == 2 && gun <= 19)) {
+                    burc = "Kova".toUpperCase();
+                }
+                
+                else if ((ay == 2 && gun >= 20) || (ay == 3 && gun <= 20)) {
+                    burc = "Balık".toUpperCase();
+                }
+                
+                else if ((ay == 3 && gun >= 21) || (ay == 4 && gun <= 20)) {
+                    burc = "Koc".toUpperCase();
+                }
+                
+                else if ((ay == 4 && gun >= 21) || (ay == 5 && gun <= 21)) {
+                    burc = "Boga".toUpperCase();
+                }
+                
+                else if ((ay == 5 && gun >= 22) || (ay == 6 && gun <= 22)) {
+                    burc = "Ikızler".toUpperCase();
+                }
+                
+                else if ((ay == 6 && gun >= 23) || (ay == 7 && gun <= 22)) {
+                    burc = "Yengec".toUpperCase();
+                }
+                
+                else if ((ay == 7 && gun >= 23) || (ay == 8 && gun <= 22)) {
+                    burc = "Aslan".toUpperCase();
+                }
+                
+                else if ((ay == 8 && gun >= 23) || (ay == 9 && gun <= 22)) {
+                    burc = "Basak".toUpperCase();
+                }
+                
+                else if ((ay == 9 && gun >= 23) || (ay == 10 && gun <= 22)) {
+                    burc = "Terazı".toUpperCase();
+                }
+                else if ((ay == 10 && gun >= 23) || (ay == 11 && gun <= 21)) {
+                    burc = "Akrep".toUpperCase();
+                }
+                
+                else if ((ay == 11 && gun >= 22) || (ay == 12 && gun <= 21)) {
+                    burc = "Yay".toUpperCase();
+                }
+                
+                else if ((ay == 12 && gun >= 22) || (ay == 1 && gun <= 20)) {
+                    burc = "Oglak".toUpperCase();
+                }
+                
+                else {
+                    burc = "Gecersiz bir tarih girdiniz.";
+                }   
+                break;
+            default:
+                System.out.println("Gecersiz bir tercih yaptiniz!");
+                break;
+               
+        }
+        
+       
+        System.out.println("Burcunuz: "+burc);
+        return burc;
+    }
+    
+    public void burcYorumu(){
+        
+        
+        YillikBurc yillik = new YillikBurc(burc);
+        AylikBurc aylik = new AylikBurc(burc);
+        
+        System.out.println("Simdi de istediginiz burc yorumunu seciniz: ");
+        System.out.println("1 - Aylik Yorum");
+        System.out.println("2 - Yillik Yorum");
+        System.out.print("Seciminiz: ");
+        tercih=klavye.nextInt();
+        
+        System.out.println();
+        
+        if(burc.equals("koc".toUpperCase()) && tercih==1){
+            
+            System.out.println(aylik.getAnlamlar()[0]);
+        }
+        
+        else if(burc.equals("koc".toUpperCase()) && tercih==2){
+            System.out.println(yillik.getAnlamlar()[0]);
+        }
+        
+        else if(burc.equals("boga".toUpperCase()) && tercih==1){
+            System.out.println(aylik.getAnlamlar()[1]);
+        }
+        
+        else if(burc.equals("boga".toUpperCase()) && tercih==2){
+            System.out.println(yillik.getAnlamlar()[1]);
+        }
+        
+        else if(burc.equals("ıkızler".toUpperCase()) && tercih==1){
+            System.out.println(aylik.getAnlamlar()[2]);
+        }
+        
+        else if(burc.equals("ıkızler".toUpperCase()) && tercih==2){
+            System.out.println(yillik.getAnlamlar()[2]);
+        }
+        
+        else if(burc.equals("yengec".toUpperCase()) && tercih==1){
+            System.out.println(aylik.getAnlamlar()[3]);
+        }
+        
+        else if(burc.equals("yengec".toUpperCase()) && tercih==2){
+            System.out.println(yillik.getAnlamlar()[3]);
+        }
+        
+        else if(burc.equals("aslan".toUpperCase()) && tercih==1){
+            System.out.println(aylik.getAnlamlar()[4]);
+        }
+        
+        else if(burc.equals("aslan".toUpperCase()) && tercih==2){
+            System.out.println(yillik.getAnlamlar()[4]);
+        }
+        
+        else if(burc.equals("basak".toUpperCase()) && tercih==1){
+            System.out.println(aylik.getAnlamlar()[5]);
+        }
+        
+        else if(burc.equals("basak".toUpperCase()) && tercih==2){
+            System.out.println(yillik.getAnlamlar()[5]);
+        }
+        
+        else if(burc.equals("terazı".toUpperCase()) && tercih==1){
+            System.out.println(aylik.getAnlamlar()[6]);
+        }
+        
+        else if(burc.equals("terazı".toUpperCase()) && tercih==2){
+            System.out.println(yillik.getAnlamlar()[6]);
+        }
+        
+        else if(burc.equals("akrep".toUpperCase()) && tercih==1){
+            System.out.println(aylik.getAnlamlar()[7]);
+        }
+        
+        else if(burc.equals("akrep".toUpperCase()) && tercih==2){
+            System.out.println(yillik.getAnlamlar()[7]);
+        }
+        
+        else if(burc.equals("yay".toUpperCase()) && tercih==1){
+            System.out.println(aylik.getAnlamlar()[8]);
+        }
+        
+        else if(burc.equals("yay".toUpperCase()) && tercih==2){
+            System.out.println(yillik.getAnlamlar()[8]);
+        }
+        
+        else if(burc.equals("oglak".toUpperCase()) && tercih==1){
+            System.out.println(aylik.getAnlamlar()[9]);
+        }
+        
+        else if(burc.equals("oglak".toUpperCase()) && tercih==2){
+            System.out.println(yillik.getAnlamlar()[9]);
+        }
+        
+        else if(burc.equals("kova".toUpperCase()) && tercih==1){
+            System.out.println(aylik.getAnlamlar()[10]);
+        }
+        
+        else if(burc.equals("kova".toUpperCase()) && tercih==2){
+            System.out.println(yillik.getAnlamlar()[10]);
+        }
+        
+        else if(burc.equals("balık".toUpperCase()) && tercih==1){
+            System.out.println(aylik.getAnlamlar()[11]);
+        }
+        
+        else if(burc.equals("balık".toUpperCase()) && tercih==2){
+            System.out.println(yillik.getAnlamlar()[11]);
+        }
+        
+    }
+}
 
