@@ -2584,3 +2584,352 @@ public class BurcYorumu {
     }
 }
 
+
+
+import java.util.Scanner;
+
+public class BurcIslemleri {
+    
+    public int gun;
+    public int ay;
+    public String secim1;
+    public String secim2;
+    public String burc;
+    public int burcSayisi;
+    public int tercih;
+    public int secilenAy;
+    
+    AylikBurc aylik = new AylikBurc();
+    YillikBurc yillik = new YillikBurc();
+    
+    Scanner klavye= new Scanner(System.in);
+    
+    public String[] ozellikler={
+        
+        //Koç
+        
+        "Bu burcun mensupları, genellikle enerjik, cesur ve kararlı yapılarıyla tanınır. \n"
+            + "Koç burcunun özellikleri arasında hızlı hareket etme ve ani kararlar alma \n"
+            + "yetenekleri de bulunur. Koç burçları, genellikle bağımsızlığına düşkün ve \n"
+            + "kendi yolunu çizmeyi seven bireylerdir.",
+        
+        //Boğa
+        
+        "Boğa burcu insanı cana yakın, merhametli ve sempatik yapısıyla biliniyor. \n"
+            + "Toprak grubunda yer alan Boğa burçları, sakin ve güvenilir yapılarıyla da \n"
+            + "tanınıyor. Keskin düzeyde maddi zekaya sahip olan bu insanlar hem gündelik \n"
+            + "yaşamda hem de iş hayatında bu özellikleri ile kolaylık sağlıyorlar.",
+        
+        //İkizler
+        
+        "İkizler burcu, enerjik ve çok yönlü yapısıyla öne çıkar. Bir ortama girdiğinde \n"
+            + "sürekli gülümsemesi, mutlu tavırları ve canayakınlığıyla göze çarpan bu \n"
+            + "kişiler, hareketli yaşamayı sever. Ancak ikizler burcu özellikleri arasında \n"
+            + "yer alan kararsızlık ve değişkenlik, zaman zaman maymun iştahlılığa dönüşebilir.",
+        
+        //Yengeç
+        
+        "Yengeç'ler duygusallıkları ve duyarlılıkları ile tanınırlar. Çevresindeki her insandan \n"
+            + "da aynı hassasiyeti bekledikleri için, kolay geçinilebilir kişiler değildir. \n"
+            + "İyi günlerinde neşeli, iyi kalpli, yardımsever, düşünceli ve anlayışlıdırlar. \n"
+            + "Fakat herhangi belirgin bir neden olmadan somurtkan ve alıngan olabilirler.",
+        
+        //Aslan
+        
+        "Aslan Burcu, Zodyak'ın beşinci burcu olarak tanınır ve 23 Temmuz ile 22 Ağustos tarihleri \n"
+            + "arasında doğanları temsil eder. Bu burcun insanları, kendilerine güvenen, cesur ve \n"
+            + "doğal liderler olarak bilinirler. Ateş elementiyle ilişkilendirilen Aslan bireyleri, \n"
+            + "adeta içlerinde yanan bir alev gibi enerjik ve tutkuludurlar.",
+        
+        //Başak
+        
+        "Başak burcu, detaycılığı ve analitik düşünce yapısıyla tanınır. Başak burcu \n"
+            + "insanları, mantıklı ve pratik yaklaşımıyla sorunlara çözüm üretmede ustadır. \n"
+            + "Başak burcunun özellikleri arasında dikkatli ve özenli olma, \n"
+            + "küçük detaylara bile büyük önem verme bulunur.",
+        
+        //Terazi
+        
+        "Terazi burçları genel olarak akıllı, mantıklı ve aşk dolu özelliklere sahiplerdir. \n"
+            + "Terazi burçları hayallerine ulaşmak için çok çalışırlar. Terazi burçları genel \n"
+            + "olarak uzlaşı yanlısı ve kibar özellikleri ile bilinirler. İlişkilerinde \n"
+            + "adil olan terazi burçları mantıkları ile birlikte hareket ederler.",
+        
+        //Akrep
+        
+        "Sabit bir su burcu olan Akrepler sadakatleri, bağlılıkları ve tutkularıyla tanınırlar. \n"
+            + "İçgüdüleri ve doğuştan gelen durugörü yetenekleri ile insanların kendilerinin \n"
+            + "bile farkında olmadığı yönlerini görme yeteneğine sahiptirler. Bu onların \n"
+            + "hem en güçlü yönü hem de lanetidir.",
+        
+        //Yay
+        
+        " Yay burcunun temel nitelikleri arasında maceraperestlik, yenilik arayışı ve \n"
+            + "iyimserlik öne çıkar. Yay burcu kadınları ve erkekleri, özgürlüğüne \n"
+            + "düşkün ve maceracı ruhlarıyla tanınırlar.",
+        
+        //Oğlak
+        
+        "Temel özellikleri arasında kararlılık, disiplin, ciddiyet ve hedefe yönelik bir \n"
+            + "bakış açısı bulunur. Oğlak burcu bireyleri genellikle çalışkan, \n"
+            + "sorumluluk sahibi ve liderlik özellikleriyle bilinir.",
+        
+        //Kova
+        
+        "Hava grubuna ait olan Kova burcu, yenilikçi, özgür ruhlu ve bağımsız karakteriyle bilinir. \n"
+            + "Bu burçta doğan insanlar, genellikle toplumsal meselelerle ilgilenir ve insan haklarına \n"
+            + "büyük önem verirler. Kova burcu özellikleri arasından en belirginlerinden biri, \n"
+            + "sıradışı düşünce yapılarına sahip olmalarıdır.",
+        
+        //Balık
+        
+        "Genel olarak uysallığı ile bilinen ve su grubu olan balık burçları 20 Şubat ile \n"
+            + "20 Mart tarihleri arasında doğmuş kişilerdir. Balık burcu olan kişiler \n"
+            + "genel olarak sabırlı, eli açık ve de duyarlı olan insanlardır. \n"
+            + "Bu kişilerin her daim büyük bir inandırma yetenekleri bulunmaktadır."  
+    };
+    
+    public BurcIslemleri(){
+        
+        
+    }
+    
+    
+    public String burcHesabi(){
+        
+        System.out.println("Burcunuzu biliyor musunuz?");
+        secim1=klavye.next().toLowerCase();
+       
+        switch (secim1) {
+            case "evet":
+                System.out.print("Lutfen burcunuzu giriniz: ");
+                burc=klavye.next().toUpperCase();
+                System.out.println();
+                
+                switch(burc){
+                    
+                    case "KOVA":
+                        burcSayisi=10;
+                        break;
+                        
+                    case "BALIK":
+                        burcSayisi=11;
+                        break;
+                        
+                    case "KOC":
+                        burcSayisi=0;
+                        break;
+                        
+                    case "BOGA":
+                        burcSayisi=1;
+                        break;
+                        
+                    case "IKIZLER":
+                        burcSayisi=2;
+                        break;
+                        
+                    case "YENGEC":
+                        burcSayisi=3;
+                        break;
+                        
+                    case "ASLAN":
+                        burcSayisi=4;
+                        break;
+                        
+                    case "BASAK":
+                        burcSayisi=5;
+                        break;
+                        
+                    case "TERAZI":
+                        burcSayisi=6;
+                        break;
+                        
+                    case "AKREP":
+                        burcSayisi=7;
+                        break;
+                        
+                    case "YAY":
+                        burcSayisi=8;
+                        break;
+                        
+                    case "OGLAK":
+                        burcSayisi=9;
+                        break;
+                }
+                
+                break;
+                
+            case "hayır":
+                System.out.print("Dogum ayinizi giriniz(1-12): ");
+                ay=klavye.nextInt();
+                System.out.print("Dogum gununuzu seciniz (1-31):");
+                gun=klavye.nextInt();
+                if ((ay == 1 && gun >= 21) || (ay == 2 && gun <= 19)) {
+                    burc = "Kova".toUpperCase();
+                    burcSayisi=10;
+                }
+                
+                else if ((ay == 2 && gun >= 20) || (ay == 3 && gun <= 20)) {
+                    burc = "Balık".toUpperCase();
+                    burcSayisi=11;
+                }
+                
+                else if ((ay == 3 && gun >= 21) || (ay == 4 && gun <= 20)) {
+                    burc = "Koc".toUpperCase();
+                    burcSayisi=0;
+                }
+                
+                else if ((ay == 4 && gun >= 21) || (ay == 5 && gun <= 21)) {
+                    burc = "Boga".toUpperCase();
+                    burcSayisi=1;
+                }
+                
+                else if ((ay == 5 && gun >= 22) || (ay == 6 && gun <= 22)) {
+                    burc = "Ikızler".toUpperCase();
+                    burcSayisi=2;
+                }
+                
+                else if ((ay == 6 && gun >= 23) || (ay == 7 && gun <= 22)) {
+                    burc = "Yengec".toUpperCase();
+                    burcSayisi=3;
+                }
+                
+                else if ((ay == 7 && gun >= 23) || (ay == 8 && gun <= 22)) {
+                    burc = "Aslan".toUpperCase();
+                    burcSayisi=4;
+                }
+                
+                else if ((ay == 8 && gun >= 23) || (ay == 9 && gun <= 22)) {
+                    burc = "Basak".toUpperCase();
+                    burcSayisi=5;
+                }
+                
+                else if ((ay == 9 && gun >= 23) || (ay == 10 && gun <= 22)) {
+                    burc = "Terazı".toUpperCase();
+                    burcSayisi=6;
+                }
+                else if ((ay == 10 && gun >= 23) || (ay == 11 && gun <= 21)) {
+                    burc = "Akrep".toUpperCase();
+                    burcSayisi=7;
+                }
+                
+                else if ((ay == 11 && gun >= 22) || (ay == 12 && gun <= 21)) {
+                    burc = "Yay".toUpperCase();
+                    burcSayisi=8;
+                }
+                
+                else if ((ay == 12 && gun >= 22) || (ay == 1 && gun <= 20)) {
+                    burc = "Oglak".toUpperCase();
+                    burcSayisi=9;
+                }
+                
+                else {
+                    System.out.println("Gecersiz bir tarih girdiniz.");
+                }   
+                break;
+            default:
+                System.out.println("Gecersiz bir tercih yaptiniz!");
+                break;
+        }
+        System.out.println("Burcunuz: "+burc);
+        return burc;
+    }
+    
+    public void burcOzelligi(){
+        
+        System.out.println("Burcunuzun ozelligini ogrenmek ister misiniz?");
+        secim2=klavye.next().toLowerCase();
+        
+        switch(secim2){
+            
+            case "evet":
+               
+                if(burc.equals("Koc".toUpperCase())){
+                    System.out.println("Koc Burcunun Ozelligi: "+ozellikler[0]);
+                }
+                
+                else if(burc.equals("Boga".toUpperCase())){
+                    System.out.println("Boga Burcunun Ozelligi: "+ozellikler[1]);
+                }
+                
+                else if(burc.equals("Ikızler".toUpperCase())){
+                    System.out.println("ıkizler Burcunun Ozelligi: "+ozellikler[2]);
+                }
+                
+                else if(burc.equals("Yengec".toUpperCase())){
+                    System.out.println("Yengec Burcunun Ozelligi: "+ozellikler[3]);
+                }
+                
+                else if(burc.equals("Aslan".toUpperCase())){
+                    System.out.println("Aslan Burcunun Ozelligi: "+ozellikler[4]);
+                }
+                
+                else if(burc.equals("Basak".toUpperCase())){
+                    System.out.println("Basak Burcunun Ozelligi: "+ozellikler[5]);
+                }
+                
+                else if(burc.equals("Terazı".toUpperCase())){
+                    System.out.println("Terazi Burcunun Ozelligi: "+ozellikler[6]);
+                }
+                
+                else if(burc.equals("Akrep".toUpperCase())){
+                    System.out.println("Akrep Burcunun Ozelligi: "+ozellikler[7]);
+                }
+                
+                else if(burc.equals("Yay".toUpperCase())){
+                    System.out.println("Yay Burcunun Ozelligi: "+ozellikler[8]);
+                }
+                
+                else if(burc.equals("Oglak".toUpperCase())){
+                    System.out.println("Oglak Burcunun Ozelligi: "+ozellikler[9]);
+                }
+                
+                else if(burc.equals("Kova".toUpperCase())){
+                    System.out.println("Kova Burcunun Ozelligi: "+ozellikler[10]);
+                }
+                
+                else if(burc.equals("Balık".toUpperCase())){
+                    System.out.println("Balik Burcunun Ozelligi: "+ozellikler[11]);
+                }
+                break;
+            
+                
+            case "hayir":
+                
+                System.out.println("Nasil istersen.");
+                break;
+        }
+    }
+    
+    public void burcYorumu(){
+        
+        System.out.println("Iki tur burc yorumu mevcuttur.");
+        System.out.println("1)Aylik Burc Yorumu");
+        System.out.println("2)Yillik Burc Yorumu");
+        System.out.println("Istediginiz yorum turu hangisi?");
+        tercih=klavye.nextInt();
+        
+        switch(tercih){
+            
+            case 1:
+                
+                System.out.println("Kacinci ayin yorumunu istersin?");
+                secilenAy=klavye.nextInt();
+                
+                System.out.println(secilenAy+". Ayin Yorumu " +aylik.getAnlamlar()[secilenAy-1][burcSayisi]);
+                break;
+                
+            case 2:
+                
+                System.out.println(burc+" Burcunun Yillik Yorumu: ");
+                System.out.println(""+yillik.getAnlamlar()[burcSayisi]);
+                break;
+                
+            default:
+                
+                System.out.println("Gecersiz bir tercih yaptiniz!");
+                break;
+        }
+    }
+}
+
